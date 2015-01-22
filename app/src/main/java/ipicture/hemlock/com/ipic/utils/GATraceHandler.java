@@ -13,7 +13,7 @@ import java.util.HashMap;
  * Created by me866chuan on 1/21/15.
  */
 public class GATraceHandler extends Application{
-    private static final String PROPERTY_ID = "UA-48485504-5";
+    private static final String PROPERTY_ID = "UA-48485504-6";
     private boolean flagHandlerExeption = false;
     public static ExceptionReporter reporter = null;
     public HashMap mTrackers = new HashMap();

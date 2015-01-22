@@ -1,9 +1,12 @@
-package ipicture.hemlock.com.ipic.utils.multitouch;
+package ipicture.hemlock.com.ipic.utils.touch;
 
 import android.content.Context;
 import android.view.MotionEvent;
 
-
+/**
+ * https://github.com/Almeros/android-gesture-detectors
+ * @author Almer Thie (code.almeros.com)
+ */
 public class RotateGestureDetector extends TwoFingerGestureDetector {
 
 	/**
@@ -11,14 +14,14 @@ public class RotateGestureDetector extends TwoFingerGestureDetector {
 	 * to perform callbacks to any implementing class which is registered to a
 	 * RotateGestureDetector via the constructor.
 	 * 
-	 * @see ipicture.hemlock.com.ipic.utils.multitouch.RotateGestureDetector.SimpleOnRotateGestureListener
+	 * @see ipicture.hemlock.com.ipic.utils.touch.RotateGestureDetector.SimpleOnRotateGestureListener
 	 */
 	public interface OnRotateGestureListener {
 		public boolean onRotate(RotateGestureDetector detector);
 		public boolean onRotateBegin(RotateGestureDetector detector);
 		public void onRotateEnd(RotateGestureDetector detector);
 	}
-
+	
 	/**
 	 * Helper class which may be extended and where the methods may be
 	 * implemented. This way it is not necessary to implement all methods

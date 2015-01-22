@@ -1,13 +1,12 @@
-package ipicture.hemlock.com.ipic.utils.multitouch;
+package ipicture.hemlock.com.ipic.utils.touch;
 
 import android.content.Context;
 import android.view.MotionEvent;
 
-
-/*
- * android multi-touch helper
+/**
+ * https://github.com/Almeros/android-gesture-detectors
+ * @author Almer Thie (code.almeros.com)
  */
-
 public abstract class BaseGestureDetector {
     protected final Context mContext;
     protected boolean mGestureInProgress;
@@ -73,7 +72,6 @@ public abstract class BaseGestureDetector {
     
     
     protected void updateStateByEvent(MotionEvent curr){
-    	try{
     	final MotionEvent prev = mPrevEvent;
     	
     	// Reset mCurrEvent
@@ -90,10 +88,6 @@ public abstract class BaseGestureDetector {
         // Pressure
         mCurrPressure = curr.getPressure(curr.getActionIndex());
         mPrevPressure = prev.getPressure(prev.getActionIndex());
-    	}
-    	catch(Exception e){
-    		
-    	}
     }
     
     protected void resetState() {

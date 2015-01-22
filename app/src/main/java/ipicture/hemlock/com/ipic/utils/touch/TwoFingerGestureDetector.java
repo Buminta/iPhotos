@@ -1,4 +1,4 @@
-package ipicture.hemlock.com.ipic.utils.multitouch;
+package ipicture.hemlock.com.ipic.utils.touch;
 
 import android.content.Context;
 import android.util.DisplayMetrics;
@@ -6,7 +6,10 @@ import android.util.FloatMath;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 
-
+/**
+ * https://github.com/Almeros/android-gesture-detectors
+ * @author Almer Thie (code.almeros.com)
+ */
 public abstract class TwoFingerGestureDetector extends BaseGestureDetector {
 
     private final float mEdgeSlop;
@@ -20,7 +23,7 @@ public abstract class TwoFingerGestureDetector extends BaseGestureDetector {
     
     private float mCurrLen;
     private float mPrevLen;
-
+	
     public TwoFingerGestureDetector(Context context) {
     	super(context);
     	
@@ -33,12 +36,12 @@ public abstract class TwoFingerGestureDetector extends BaseGestureDetector {
 
 	@Override
 	protected abstract void handleInProgressEvent(int actionCode, MotionEvent event);
-
+	
 	protected void updateStateByEvent(MotionEvent curr){
 		super.updateStateByEvent(curr);
-
+		
 		final MotionEvent prev = mPrevEvent;
-
+		
         mCurrLen = -1;
         mPrevLen = -1;
 
@@ -62,7 +65,7 @@ public abstract class TwoFingerGestureDetector extends BaseGestureDetector {
         mCurrFingerDiffX = cvx;
         mCurrFingerDiffY = cvy;
 	}
-
+	
     /**
      * Return the current distance between the two pointers forming the
      * gesture in progress.
