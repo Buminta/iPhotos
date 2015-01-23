@@ -99,6 +99,7 @@ public class GestureImageView extends ImageView {
 		float scaleX = (float) mViewWidth / (float) mImageWidth;
         float scaleY = (float) mViewHeight / (float) mImageHeight;
         mScaleFactor = Math.min(scaleX, scaleY);
+        if(mScaleFactor > 1) mScaleFactor = 1;
         mMatrix.setScale(mScaleFactor, mScaleFactor);
         
         // Center the image
